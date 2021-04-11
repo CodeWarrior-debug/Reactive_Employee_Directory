@@ -4,15 +4,16 @@ const name = "Christian";
 const thoughts = "is amazing!!!";
 const numEEs = 5;
 
-// let eeData= $.ajax({
-//   url: 'https://randomuser.me/api/',
-//   dataType: 'json',
-//   success: function(data) {
-//     console.log(data);
-//   }
-// });
+let eeData= $.ajax({
+  url: 'https://randomuser.me/api/',
+  dataType: 'json',
+  success: function(data) {
+    // console.log(data);
+    return data;
+  }
+});
 
-
+console.log(eeData);
 
 // const stripVowels = str => {
 //   const vowels = ["a", "e", "i", "o", "u"];
