@@ -1,11 +1,13 @@
+/* eslint-disable import/no-anonymous-default-export */
+
 import axios from "axios";
+const BASEURL = "https://randomuser.me/api/?";
+const RESULTS = "results=30";
 
-const BASEURL = "https://api.giphy.com/v1/gifs/search?q=";
-const APIKEY = "&api_key=dc6zaTOxFJmzC&limit=20";
 
-// Export an object with a "search" method that searches the Giphy API for the passed query
+// Export an object with a "search" method that searches the specified API for the passed query
 export default {
   search: function(query) {
-    return axios.get(BASEURL + query + APIKEY);
+    return axios.get(BASEURL + RESULTS + query);
   }
 };
