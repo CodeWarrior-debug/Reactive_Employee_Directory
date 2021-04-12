@@ -24,23 +24,44 @@
 // export default Table;
 
 import React from "react";
+import SearchEmployees from "./SearchEmployees";
 
 function Table(props) {
     return(
         <table>
             <thead>
                 <tr>
-                    <th colSpan="2">The table header</th>
+                    <td>First Name</td>
+                    <td>Last Name</td>
+                    <td>Email</td>
+                    <td>TimeZone</td>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>The table body</td>
-                    <td>with two columns</td>
-                </tr>
+                <SearchEmployees></SearchEmployees>
             </tbody>
         </table>
     );
 }
 
+
+
+
     export default Table;
+
+//     import React from "react";
+// import "./style.css";
+
+// function SearchResults(props) {
+//   return (
+//     <ul className="list-group search-results">
+//       {props.results.map(result => (
+//         <li key={result} className="list-group-item">
+//           <img alt="Dog" src={result} className="img-fluid" />
+//         </li>
+//       ))}
+//     </ul>
+//   );
+// }
+
+// export default SearchResults;

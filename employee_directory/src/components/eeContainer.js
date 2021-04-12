@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Container from "./Container";
-import Row from "./Row";
-import Col from "./Col";
-import Card from "./Card";
-import SearchForm from "./SearchForm";
-import MovieDetail from "./MovieDetail";
+// import Row from "./Row";
+// import Col from "./Col";
+// import Card from "./Card";
+// import SearchForm from "./SearchForm";
+// import MovieDetail from "./MovieDetail";
 import API from "../utils/API";
 import Table from "./Table";
 
@@ -16,12 +16,13 @@ class EeContainer extends Component {
 
   // When this component mounts, search 
   componentDidMount() {
-    this.searchEmployees("");
+    this.searchEmployees(10);
   }
 
   searchEmployees = query => {
     API.search(query)
       .then(res => this.setState({ result: res.data }))
+      .then(console.log(this.state.result))
       // .then(res => this.setState({ result: res.data }))
       .catch(err => console.log(err));
   };
@@ -45,7 +46,7 @@ class EeContainer extends Component {
       
       <Container>
          <Table></Table> {/*testing  */}
-        <Row>
+        {/* <Row>
           <Col size="md-8">
             <Card
               heading={this.state.result.Title || "Search for a Movie to Begin"}
@@ -72,7 +73,7 @@ class EeContainer extends Component {
               />
             </Card>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
     );
   }

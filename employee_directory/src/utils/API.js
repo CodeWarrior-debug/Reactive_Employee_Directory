@@ -2,7 +2,7 @@
 
 import axios from "axios";
 const BASEURL = "https://randomuser.me/api/?";
-const RESULTS = "results=30";
+const RESULTS = "results=";
 
 
 // Export an object with a "search" method that searches the specified API for the passed query
