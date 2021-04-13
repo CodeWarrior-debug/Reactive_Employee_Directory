@@ -1,11 +1,12 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Table from './components/Table';
-import EeContainer from './components/EeContainer'
+import Page from './components/Page'
+
 
 function App() {
   return (
-   <EeContainer/>
+   <Page/>
   );
 }
 
