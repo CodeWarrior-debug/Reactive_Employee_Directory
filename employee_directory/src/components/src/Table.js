@@ -3,6 +3,7 @@ import React from "react";
 function Table(props) {
   return (
     <table>
+
       <thead>
         <tr>
             <td> Name</td>
@@ -22,6 +23,7 @@ function Table(props) {
             <td>{result.gender}</td>
           </tr>
         ))}
+        
     </table>
   );
 }
