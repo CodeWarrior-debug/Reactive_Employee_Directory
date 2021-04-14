@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import API from "../utils/API";
+import SearchForm from "./src/SearchForm";
 
 class Page extends Component {
 
@@ -21,8 +22,6 @@ class Page extends Component {
     handleInputChange = event => {  
       this.setState({ search: event.target.value });
     };
-  
-      // const filteredElements = elements.filter(e => e.includes(filterStr))
   
 }
 
@@ -65,8 +64,15 @@ const useSortableData = (items, config = null) => {
 //Supplied
 const Table = (props) => {
   // const { items, requestSort, sortConfig } = useSortableData(props.products);  
-  const { items, requestSort, sortConfig } = useSortableData(props.products);  
-  //how can I bring employees instead of products?
+  const { items, requestSort, sortConfig } = useSortableData(props.products);
+  // const { elements } = this.props;  //ADD FROM FILTER
+  // const { filterStr } = this.state; //ADD FROM FILTER
+
+    // const { filteredElements }= elements
+    //   .filter(e => e.name.includes(filterStr))
+    //   .map(e => <li>{ e }</li>)
+
+  //******************how can I bring employees instead of products?************************
   const getClassNamesFor = (name) => {
     if (!sortConfig) {
       return;
@@ -74,6 +80,7 @@ const Table = (props) => {
     return sortConfig.key === name ? sortConfig.direction : undefined;
   };
   return (
+    
     <table>
       <caption>Employees</caption>  {/* Changeable */}
       <thead>
@@ -123,6 +130,7 @@ const Table = (props) => {
 export default function App() {
   return (
     <div className="App">
+      <SearchForm />
       <Table
         products={[
           { id: 1, name: 'Cheese', price: 4.9, stock: 20 },
@@ -137,3 +145,31 @@ export default function App() {
     </div>
   );
 }
+
+// export default Page;
+
+//HOW TO FILTER 
+// The simplest to implement is to filter the props in your render method. If you have sufficiently small components which don't update for too many reasons, and especially if the number of elements in the list is low, this might be the preferred method:
+
+// class FilterList extends React.Component {
+//   render () {
+//     const { elements } = this.props;
+//     const { filterStr } = this.state;
+
+//     const filteredElements = elements
+//       .filter(e => e.includes(filterStr))
+//       .map(e => <li>{ e }</li>)
+
+//     return (
+//       <div>
+//         <input
+//           type="text"
+//           value={ filterStr }
+//           onChange={ e => this.setState({ filterStr: e.target.value }) } />
+//         <ul>
+//           { filteredElements }
+//         </ul>
+//       </div>
+//     );
+//   }
+// }
