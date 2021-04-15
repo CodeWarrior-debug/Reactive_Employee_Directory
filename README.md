@@ -41,18 +41,18 @@
   This employee directory livens up your day by showing thumbnail pics of your employees as you filter and sort through them. Using a React front end and an Axios package, this draws and sorts from an API of sample employee data.
   
  
- ![image1](later) 
+ ![image1](https://github.com/CodeWarrior-debug/Reactive_Employee_Directory/blob/main/DirectoryClip.png?raw=true) 
  
  
  
- ![image2](later2) 
+ ![image2](https://github.com/CodeWarrior-debug/Reactive_Employee_Directory/blob/main/Employee_Directory.gif?raw=true) 
  
  
   
   ---
   ## Installation
   
-  Visit the page!
+  Visit the page! No other installation.
   
   ---
   ## Usage
