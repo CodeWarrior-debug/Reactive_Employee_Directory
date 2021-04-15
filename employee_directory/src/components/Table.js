@@ -2,30 +2,32 @@ import React from "react";
 
 function Table(props) {
   return (
-    <table>
-
+    <table className="table">
       <thead>
         <tr>
-            <td> Name</td>
-            <td> Picture</td>
-            <td> Email</td>
-            <td> Time Offset</td>
-            <td> Gender</td>
+          <td> Name</td>
+          <td> Picture</td>
+          <td> Email</td>
+          <td> Time Offset</td>
+          <td> Gender</td>
         </tr>
       </thead>
-
+      <tbody>
         {/* {props.results.map(result => result.gender.includes(props.state.filterStr))
          {props.results.gender.filter(result => result.gender.includes(props.state.filterStr)) */}
-        {props.results.map(result => (
-          <tr key={result}>
+        {props.results.map((result) => (
+          <tr key={result.login.uuid}>
             <td>{result.name.first + " " + result.name.last}</td>
-            <td> <img src={result.picture.thumbnail} alt="Employee"/></td>
+            <td>
+              {" "}
+              <img src={result.picture.thumbnail} alt="Employee" />
+            </td>
             <td>{result.email}</td>
             <td>{result.location.timezone.offset}</td>
             <td>{result.gender}</td>
           </tr>
         ))}
-        
+      </tbody>
     </table>
   );
 }
